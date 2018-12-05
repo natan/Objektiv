@@ -8,7 +8,8 @@
 
 #import "PrefsController.h"
 #import "Constants.h"
-#import <MASShortcut/MASShortcut.h>
+
+#import <MASShortcut/Shortcut.h>
 
 @interface PrefsController ()
 {

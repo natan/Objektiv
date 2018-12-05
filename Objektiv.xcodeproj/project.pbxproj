@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		307D52181689B493003D6C8C /* objektiv-overlay.png in Resources */ = {isa = PBXBuildFile; fileRef = 307D52161689B493003D6C8C /* objektiv-overlay.png */; };
-		85E05F32EFA24E52AA562CC4 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F7216227D724BE9A9EBC6DC /* libPods.a */; };
+		43F9E366BDEFFEA24656AE15 /* libPods-Objektiv.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 10A4963B329AC16DB6CE0F8F /* libPods-Objektiv.a */; };
 		BC084585168484D500619E60 /* ZeroKitUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = BC084584168484D500619E60 /* ZeroKitUtilities.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		BC084589168498D000619E60 /* PFMoveApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = BC084588168498D000619E60 /* PFMoveApplication.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		BC08458D1684998600619E60 /* NSString+SymlinksAndAliases.m in Sources */ = {isa = PBXBuildFile; fileRef = BC08458B1684998600619E60 /* NSString+SymlinksAndAliases.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -78,9 +78,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		10A4963B329AC16DB6CE0F8F /* libPods-Objektiv.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Objektiv.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		17EF79E82A0CFEAA79D412DC /* Pods-Objektiv.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Objektiv.release.xcconfig"; path = "Pods/Target Support Files/Pods-Objektiv/Pods-Objektiv.release.xcconfig"; sourceTree = "<group>"; };
 		307D52171689B493003D6C8C /* en */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = en; path = "en.lproj/objektiv-overlay.png"; sourceTree = "<group>"; };
-		3DAAA205D2EE40DDA76D0F72 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
-		8F7216227D724BE9A9EBC6DC /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		89BEA03067C0E63D55B9CCA5 /* Pods-Objektiv.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Objektiv.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Objektiv/Pods-Objektiv.debug.xcconfig"; sourceTree = "<group>"; };
 		BC084583168484D500619E60 /* ZeroKitUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZeroKitUtilities.h; path = zerokit/ZeroKitUtilities.h; sourceTree = "<group>"; };
 		BC084584168484D500619E60 /* ZeroKitUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZeroKitUtilities.m; path = zerokit/ZeroKitUtilities.m; sourceTree = "<group>"; };
 		BC084587168498D000619E60 /* PFMoveApplication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFMoveApplication.h; path = potionfactory/PFMoveApplication.h; sourceTree = "<group>"; };
@@ -145,8 +146,8 @@
 				BCBC14FB167F0E06007D12E3 /* QuartzCore.framework in Frameworks */,
 				BC68B2D81653CF92009465F5 /* Carbon.framework in Frameworks */,
 				BCB54DE3164291F8003A59DF /* Cocoa.framework in Frameworks */,
-				85E05F32EFA24E52AA562CC4 /* libPods.a in Frameworks */,
 				BCDBFAA916ADE664006F1FCD /* Sparkle.framework in Frameworks */,
+				43F9E366BDEFFEA24656AE15 /* libPods-Objektiv.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -162,6 +163,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		557704B5E8746143767FA277 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				89BEA03067C0E63D55B9CCA5 /* Pods-Objektiv.debug.xcconfig */,
+				17EF79E82A0CFEAA79D412DC /* Pods-Objektiv.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		BC0845861684856100619E60 /* zerokit */ = {
 			isa = PBXGroup;
 			children = (
@@ -230,7 +240,7 @@
 				BCB54E05164291F8003A59DF /* ObjektivTests */,
 				BCB54DE1164291F8003A59DF /* Frameworks */,
 				BCB54DDF164291F8003A59DF /* Products */,
-				3DAAA205D2EE40DDA76D0F72 /* Pods.xcconfig */,
+				557704B5E8746143767FA277 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -253,7 +263,7 @@
 				BCB54DE2164291F8003A59DF /* Cocoa.framework */,
 				BCB54E00164291F8003A59DF /* SenTestingKit.framework */,
 				BCB54DE4164291F8003A59DF /* Other Frameworks */,
-				8F7216227D724BE9A9EBC6DC /* libPods.a */,
+				10A4963B329AC16DB6CE0F8F /* libPods-Objektiv.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -335,12 +345,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BCB54E10164291F8003A59DF /* Build configuration list for PBXNativeTarget "Objektiv" */;
 			buildPhases = (
+				9926349C35DF20D8300A3190 /* [CP] Check Pods Manifest.lock */,
 				BCB54DDA164291F8003A59DF /* Sources */,
 				BCBC14FF167F23DD007D12E3 /* Copy Frameworks */,
 				BCB54DDB164291F8003A59DF /* Frameworks */,
 				BCB54DDC164291F8003A59DF /* Resources */,
-				0070E76AAF2C4318AFF32B85 /* Copy Pods Resources */,
 				BCDBFAAB16ADE699006F1FCD /* CopyFiles */,
+				5AA24C3C549CDEEE489A53E8 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -428,19 +439,49 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0070E76AAF2C4318AFF32B85 /* Copy Pods Resources */ = {
+		5AA24C3C549CDEEE489A53E8 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputPaths = (
+			inputFileListPaths = (
 			);
-			name = "Copy Pods Resources";
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Objektiv/Pods-Objektiv-resources.sh",
+				"${PODS_CONFIGURATION_BUILD_DIR}/MASShortcut/MASShortcut.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MASShortcut.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Objektiv/Pods-Objektiv-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9926349C35DF20D8300A3190 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Objektiv-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
 		};
 		BCB54DFD164291F8003A59DF /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -619,7 +660,7 @@
 		};
 		BCB54E11164291F8003A59DF /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3DAAA205D2EE40DDA76D0F72 /* Pods.xcconfig */;
+			baseConfigurationReference = 89BEA03067C0E63D55B9CCA5 /* Pods-Objektiv.debug.xcconfig */;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -638,7 +679,7 @@
 		};
 		BCB54E12164291F8003A59DF /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3DAAA205D2EE40DDA76D0F72 /* Pods.xcconfig */;
+			baseConfigurationReference = 17EF79E82A0CFEAA79D412DC /* Pods-Objektiv.release.xcconfig */;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (

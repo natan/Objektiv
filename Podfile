@@ -1,3 +1,6 @@
-platform :osx, '10.7'
-pod 'MASShortcut',       '~> 1.1'
-pod 'CDEvents',          '~> 1.2.0'
+platform :macos, '10.11'
+
+target 'Objektiv' do
+  pod 'MASShortcut'
+  pod 'CDEvents'
+end

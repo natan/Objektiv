@@ -7,9 +7,8 @@
 //
 
 #import <Cocoa/Cocoa.h>
-#import <MASShortcutView.h>
-#import <MASShortcutView+UserDefaults.h>
 
+@class MASShortcutView;
 
 @interface PrefsController : NSWindowController
 

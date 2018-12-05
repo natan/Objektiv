@@ -15,8 +15,7 @@
 #import "BrowsersMenu.h"
 #import "OverlayWindow.h"
 #import "ZeroKitUtilities.h"
-#import <MASShortcut.h>
-#import <MASShortcut+UserDefaults.h>
+#import <MASShortcut/Shortcut.h>
 #import "PFMoveApplication.h"
 #import <CDEvents.h>
 #import <Sparkle/Sparkle.h>
@@ -67,7 +66,7 @@
                   options:NSKeyValueObservingOptionNew
                   context:NULL];
 
-    [MASShortcut registerGlobalShortcutWithUserDefaultsKey:PrefHotkey handler:^{
+    [[MASShortcutBinder sharedBinder] bindShortcutWithDefaultsKey:PrefHotkey toAction:^{
         [self hotkeyTriggered];
     }];
 
