@@ -31,11 +31,19 @@
     CDEvents *cdEvents;
     NSString *_defaultBrowser;
 }
+
+@property (nonatomic) NSTimer *statusBarRefreshAfterSelectionTimer;
+
 @end
 
 @implementation AppDelegate
 
-{} // TODO Figure out why the first pragma mark requires this empty block to show up
+#pragma mark - Life Cycle
+
+- (void)dealloc
+{
+    [_statusBarRefreshAfterSelectionTimer invalidate];
+}
 
 #pragma mark - NSApplicationDelegate
 
@@ -132,7 +140,7 @@
 
     NSLog(@"Selecting a browser: %@", newDefaultBrowser);
     [Browsers sharedInstance].defaultBrowserIdentifier = newDefaultBrowser;
-    [self performSelector:@selector(updateStatusBarIcon) withObject:nil afterDelay:0.1];
+    [self beginPeriodicStatusBarRefreshing];
     [self showNotification:newDefaultBrowser];
 }
 
@@ -180,6 +188,7 @@
     if ([identifier isEqualToString:_defaultBrowser]) return;
     _defaultBrowser = identifier;
     [[Browsers sharedInstance] findBrowsersAsync];
+    [self stopPeriodicStatusBarRefreshing];
 }
 
 - (void) destroyStatusBarIcon
@@ -232,6 +241,34 @@
     notification.informativeText = [NSString stringWithFormat:NotificationText, browserName, AppName];
 
     [[NSUserNotificationCenter defaultUserNotificationCenter] deliverNotification:notification];
+}
+
+#pragma mark - Private Methods
+
+/// Refreshes the status bar every 0.1 seconds for up to 60 seconds to allow time for the customer to respond to the "Do you want to change your default web browser…?" system dialog.
+- (void)beginPeriodicStatusBarRefreshing;
+{
+    [self stopPeriodicStatusBarRefreshing];
+    
+    NSTimeInterval const numberOfSecondsToRefresh = 60;
+    
+    NSDate *const refreshStartDate = [NSDate date];
+    
+    __weak id weakSelf = self;
+
+    self.statusBarRefreshAfterSelectionTimer = [NSTimer scheduledTimerWithTimeInterval:1 repeats:YES block:^(NSTimer * _Nonnull timer) {
+        [weakSelf updateStatusBarIcon];
+        
+        if ([[NSDate date] timeIntervalSinceDate:refreshStartDate] >= numberOfSecondsToRefresh) {
+            [weakSelf stopPeriodicStatusBarRefreshing];
+        }
+    }];
+}
+
+- (void)stopPeriodicStatusBarRefreshing;
+{
+    [self.statusBarRefreshAfterSelectionTimer invalidate];
+    self.statusBarRefreshAfterSelectionTimer = nil;
 }
 
 @end
